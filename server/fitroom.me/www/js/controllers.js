@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $http) {
   $scope.outfit = {
     title: 'AKIRA Pleated Bomber Moto Jacket with Foldover Collar',
     imageUrl: 'http://ecx.images-amazon.com/images/I/71wzofS2UCL._UY879_.jpg',
@@ -8,11 +8,17 @@ angular.module('starter.controllers', [])
   }
 
   $scope.photo = {
-    url: ''
-  }
+    url: 'testurl.com'
+  } 
 
   $scope.uploadPhoto = function(form){
-    alert('you are uploading: ' + form);
+    alert('you are uploading: ' + $scope.photo.url);
+    //send http POST request to 'https://flow.built.io/run/10QlK8z5Fi?sync=true'
+    $http.post('https://flow.built.io/run/10QlK8z5Fi?sync=true', $scope.photo).done(function(res){
+      alert('uploaded photo successfully');
+      // console.log(res);
+    });
+
   }
 
 
