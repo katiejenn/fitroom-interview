@@ -1,0 +1,18 @@
+<ion-view view-title="Fitroom">
+  <ion-content class="padding">
+    <div class='content'>
+      <img class='outfit' src='{{outfit.imageUrl}}'>
+      <br>
+      {{outfit.title}}
+      <br>
+      <form name='photo-upload-form' ng-submit='uploadPhoto(photo-upload-form)'>
+        <input class='photoUrl' type='text' name='photoUrl' ng-model='photo.url'></input>
+        <button class='button' type='submit'>Upload Photo!</button>
+      </form>
+      <!-- <button class="button" ng-click="uploadPhoto()">
+        Upload Photo
+      </button> -->
+    <div class='content'>
+    <br>
+  </ion-content>
+</ion-view>
